@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: f47.customer.payment.f47customerpayment
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: DS4_FIORI_DEV
+          url: http://vhnmrds4ci.sap.jbmgroup.com:44300
+          client: '120'
+        app:
+          name: ZF47_UI5_APP
+          package: ZF47_PACKAGE 
+          transport: DS4K907851 
+        exclude:
+          - /test/

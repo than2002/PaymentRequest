@@ -1,0 +1,7 @@
+<mvc:View controllerName="f47.customer.payment.f47customerpayment.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App id="app">
+    </App>
+</mvc:View>

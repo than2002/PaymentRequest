@@ -1,0 +1,116 @@
+<mvc:View 
+  controllerName="f47.customer.payment.f47customerpayment.controller.View1"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:layout="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+  displayBlock="true">
+  
+  <App id="App">
+    <pages>
+      <Page id="downPaymentPage" title="Payment Request" class="sapUiContentPadding">
+        <content>
+          <VBox class="sapUiSmallMargin">
+
+            <!--  Row 1: Document Date | Type | Company Code -->
+            <HBox>
+              <Label text="Document Date" width="120px" />
+            <DatePicker
+                  id="docDate"
+                width="150px"
+               displayFormat="yyyy-MM-dd"
+                valueFormat="yyyy-MM-dd"
+               
+                 placeholder=" "
+/>
+
+
+              <Label text="Type" width="120px" class="sapUiSmallMarginBegin"/>
+             <Input id="docType"
+                    value="KA"
+                    width="50px"
+                   maxLength="2"
+                  liveChange=".onFieldLengthCheck"
+                 valueStateText="Max 2 characters allowed">
+            <customData>
+             <core:CustomData key="maxlength" value="2" />
+               </customData>
+             </Input>
+
+              <Label text="Company Code" width="120px" class="sapUiSmallMarginBegin"/>
+              <Input id="companycode" width="150px" />
+            </HBox>
+
+            <!--  Row 2: Posting Date | Period | Currency/Rate -->
+            <HBox class="sapUiSmallMarginTop">
+              <Label text="Posting Date" width="120px" />
+              <DatePicker
+                    id="postingDate"
+                       width="150px"
+                             displayFormat="yyyy-MM-dd"
+                             valueFormat="yyyy-MM-dd"
+                             
+                             placeholder=" " /> <!-- remove default e.g. placeholder -->
+ 
+              <Label text="Period" width="120px" class="sapUiSmallMarginBegin" />
+              <Input id="period" width="50px" />
+
+              <Label text="Currency/Rate" width="120px" class="sapUiSmallMarginBegin" />
+
+              <Input id="currency" width="50px" />
+               <Input id="rate" width="100px" class="sapUiSmallMarginBegin" />
+            </HBox>
+
+            <!-- Remaining code unchanged -->
+           
+            <HBox>
+              <Label text="Document Number" width="120px" />
+              <Input id="documentnumber" width="150px" />
+              <Label text="Translatn Date" width="120px" class="sapUiSmallMarginBegin" />
+              <DatePicker id="translatndate" width="150px"  
+             
+               displayFormat="yyyy-MM-dd" valueFormat="yyyy-MM-dd" placeholder=" " />
+            </HBox>
+            <HBox>
+              <Label text="Trading Part.BA" width="120px" />
+              <Input id="tradingpart" width="150px" />
+              <!-- <Label text="Tax Reporting D" width="120px" class="sapUiSmallMarginBegin" />
+              <Input id="taxreporting" width="150px" /> -->
+            </HBox>
+      
+
+            <HBox>
+              <Label text="Reference" width="120px"/>
+              <Input id="reference" width="150px"/>
+            </HBox>
+
+            <HBox>
+              <Label text="Doc.Header Text" width="120px"/>
+              <Input id="docheadertext" width="300px"/>
+            </HBox>
+
+
+            <Title text="Vendor" level="H2" class="sapUiSmallMarginTop sapUiSmallMarginBottom" />
+            <VBox class="sapUiSmallMarginTop">
+              <HBox>
+                <Label text="Amount" width="120px"/>
+                <Input id="amountt" width="100px"/>
+              </HBox>
+            </VBox>
+
+            <HBox>
+              <Label text="Trg.Sp.G/LInd" width="120px"/>
+              <Input id="specialind" width="50px"/> 
+            </HBox>
+
+            <HBox justifyContent="Start" class="sapUiSmallMarginTop">
+              <Button text="Submit Payment" press="onSubmit" />
+              <Button text="Next" press=".onNextPress"></Button>
+            </HBox>
+
+          </VBox>
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>

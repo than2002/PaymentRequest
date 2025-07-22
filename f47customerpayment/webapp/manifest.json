@@ -1,0 +1,141 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "f47.customer.payment.f47customerpayment",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/SAP/ZF47_CREATE_DOC_03_SRV/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
+    },
+    "models": {
+  "": {
+    "dataSource": "mainService",
+    "settings": {
+      "defaultBindingMode": "TwoWay"
+    },
+    "type": "sap.ui.model.odata.v2.ODataModel"
+  }
+},
+
+    "crossNavigation": {
+      "inbounds": {
+        "f47customerpayment-display": {
+          "semanticObject": "f47customerpayment",
+          "action": "display",
+          "title": "F47 Customer Payment",
+          "signature": {
+            "parameters": {}
+          },
+          "resolutionResult": {
+            "applicationType": "SAPUI5",
+            "additionalInformation": "SAPUI5.Component=f47.customer.payment.f47customerpayment",
+            "url": "./"
+          }
+        },
+        "CustomerPayment-display": {
+          "semanticObject": "CustomerPayment",
+          "action": "display",
+          "title": "{{CustomerPayment-display.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    },
+    "sap.flp": {
+      "type": "application",
+      "embeddedLaunchpad": true
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "f47.customer.payment.f47customerpayment.view.View1",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    },
+    "dependencies": {
+      "minUI5Version": "1.136.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.layout": {},
+        "sap.ushell": {}
+      }
+    },
+    "models": {
+      "": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "mainService",
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "useBatch": true
+        }
+      },
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "f47.customer.payment.f47customerpayment.i18n.i18n"
+        }
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "f47.customer.payment.f47customerpayment.view",
+        "controlId": "App",
+        "controlAggregation": "pages"
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "Main",
+          "target": "MainView"
+        },
+        {
+          "pattern": "Page2",
+          "name": "Page2",
+          "target": "Page2"
+        }
+      ],
+      "targets": {
+        "MainView": {
+          "viewName": "View1",
+          "viewId": "View1"
+        },
+        "Page2": {
+          "viewName": "Page2",
+          "viewId": "Page2"
+        }
+      }
+    }
+  }
+}

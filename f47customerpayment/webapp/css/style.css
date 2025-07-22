@@ -1,0 +1,4 @@
+.bigInput .sapMInputBase {
+  height: 3rem !important;      /* taller */
+  font-size: 1.1rem !important; /* bigger font inside */
+}

@@ -1,0 +1,25 @@
+specVersion: "3.1"
+metadata:
+  name: f47.customer.payment.f47customerpayment
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ui5:
+          url: https://ui5.sap.com
+          path:
+            - /resources
+            - /test-resources
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        flp:
+          theme: sap_horizon

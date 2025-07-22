@@ -1,0 +1,17 @@
+{
+    "d": {
+      "results": [
+        {
+          "CustomerId": "C001",
+          "Name": "John Doe",
+          "City": "Mumbai"
+        },
+        {
+          "CustomerId": "C002",
+          "Name": "Jane Smith",
+          "City": "Delhi"
+        }
+      ]
+    }
+  }
+  

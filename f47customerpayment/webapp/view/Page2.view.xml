@@ -1,0 +1,97 @@
+<mvc:View
+  controllerName="f47.customer.payment.f47customerpayment.controller.Page2"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+  <Page title="Down Payment Request - Vendor Item">
+    <content>
+      <VBox class="sapUiSmallMargin">
+
+        <!-- Row 1 -->
+     <HBox>
+  <Label text="Vendor" width="120px" />
+  <Input
+    id="vendor"
+    width="200px"
+    placeholder="" />
+    <!-- showValueHelp="true" -->
+    <!-- valueHelpRequest="onValueHelpVendor" -->
+    
+  <Label text="G/L Account" width="120px" class="sapUiSmallMarginBegin" />
+  <Input
+    id="glAccount"
+    width="200px"
+    placeholder="" />
+    <!-- showValueHelp="true" -->
+    <!-- valueHelpRequest="onValueHelpGL" -->
+</HBox>
+
+
+        <!-- Row 2 -->
+        <HBox>
+          <Label text="Company Code" width="120px" />
+          <Input id="Code" width="200px" />
+        </HBox>
+
+        <!-- Section Title -->
+        <Title text="Item 1/ Down Payment Request / 39F" level="H3" class="sapUiSmallMarginTop sapUiSmallMarginBottom" />
+
+        <!-- Row 3 -->
+        <!-- Row 3: Amount and Tax Amount stacked -->
+<VBox class="sapUiSmallMarginTop">
+  <HBox>
+    <Label text="Amount" width="120px"/>
+    <Input id="amount" width="300px"/>
+  </HBox>
+  <HBox class="sapUiTinyMarginTop">
+    <Label text="Tax Amount" width="120px"/>
+    <Input id="taxAmount" width="250px"/>
+  </HBox>
+</VBox>
+
+
+        
+        <!-- Row 4 -->
+        
+        <HBox>
+          <Label text="Tax Code" width="120px" />
+          <Input id="taxCode" width="200px" />
+          <Label text="Bus./Sectn" width="120px" class="sapUiSmallMarginBegin" />
+          <Input id="busSectn" width="200px" />
+        </HBox>
+
+        <!-- Row 5 -->
+        <HBox>
+          <Label text="Due Date" width="120px" />
+          <DatePicker id="dueDate" width="200px" placeholder=" " />
+          <Label text="CD Amount" width="120px" class="sapUiSmallMarginBegin" />
+          <Input id="cdamount" width="200px" />
+        </HBox>
+
+        <!-- Row 6 -->
+        <HBox>
+          <Label text="Order" width="120px" />
+          <Input id="order" width="200px" />
+          <Label text="Profit Ctr." width="120px" class="sapUiSmallMarginBegin" />
+          <Input id="profitCenter" width="200px" />
+        </HBox>
+
+        <!-- Row 7 -->
+        <HBox>
+          <Label text="Pur.Doc." width="120px" />
+          <Input id="purchase" width="150px" />
+           <Input id="document" width="50px" placeholder="" />
+          <Label text="cmmt item" width="120px" class="sapUiSmallMarginBegin" />
+          <Input id="cmmtitem" width="200px" />
+        </HBox>
+
+        <!-- Action Buttons -->
+        <HBox class="sapUiMediumMarginTop">
+          <Button text="Back" press="onNavBack" />
+          <Button text="Submit" type="Emphasized" press="onSubmitVendorItem" class="sapUiSmallMarginBegin" />
+          <Button text="More Data" type="Emphasized" press="onNewItem" class="sapUiSmallMarginBegin" />
+        </HBox>
+
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

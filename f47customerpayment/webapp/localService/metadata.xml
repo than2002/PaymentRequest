@@ -1,0 +1,19 @@
+<edmx:Edmx Version="1.0"
+ xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="2.0"
+   xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="ZMOCK" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityType Name="Customer">
+        <Key>
+          <PropertyRef Name="CustomerId"/>
+        </Key>
+        <Property Name="CustomerId" Type="Edm.String" Nullable="false"/>
+        <Property Name="Name" Type="Edm.String"/>
+        <Property Name="City" Type="Edm.String"/>
+      </EntityType>
+      <EntityContainer Name="ZMOCK_Entities" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Customers" EntityType="ZMOCK.Customer"/>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
